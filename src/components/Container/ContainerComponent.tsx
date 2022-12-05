@@ -18,7 +18,7 @@ import { request as getAllPredictions } from '../../store/api/getAllPredictions/
 
 let theme = createTheme();
 
-export function SignInSide(props: ComponentProps<any>) {
+export function Container(props: ComponentProps<any>) {
   let dispatch = useAppDispatch();
   let { data: getNamePredictionsData } = useAppSelector((st: RootState) => st.getNamePredictions);
   let { data: getAllPredictionsData } = useAppSelector((st: RootState) => st.getAllPredictions);
@@ -41,7 +41,9 @@ export function SignInSide(props: ComponentProps<any>) {
 
   useEffect(() => {
     if (getNamePredictionsData) {
-      setPredictions( Array.isArray(getNamePredictionsData) ? getNamePredictionsData : [getNamePredictionsData]);
+      setPredictions( Array.isArray(getNamePredictionsData) ?
+       getNamePredictionsData : 
+       [getNamePredictionsData]);
     }
   }, [getNamePredictionsData])
 

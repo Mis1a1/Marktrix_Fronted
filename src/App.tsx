@@ -1,11 +1,11 @@
 import React, {  } from 'react';
 import './App.css';
-import { SignInSide } from './components/Container';
+import { Container } from './components/Container';
 
 function App() {
   return (
     <div className="App">
-        <SignInSide />
+        <Container />
     </div>
   );
 }
